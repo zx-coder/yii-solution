@@ -18,4 +18,12 @@ class Book extends ActiveRecord
         return $this->hasMany(Author::class, ['id' => 'author_id'])
             ->viaTable(BookAuthor::tableName(), ['book_id' => 'id']);
     }
+
+    public static function getYears()
+    {
+        return self::find()
+            ->select(['year'])
+            ->distinct()
+            ->column();
+    }
 }

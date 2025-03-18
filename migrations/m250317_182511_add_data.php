@@ -24,7 +24,7 @@ class m250317_182511_add_data extends Migration
                 [2, 'book 2', 2001, 'bla bla bla', 'isbn 2'],
                 [3, 'book 3', 2001, 'bla bla bla', 'isbn 3'],
                 [4, 'book 4', 2001, 'bla bla bla', 'isbn 4'],
-                [5, 'book 5', 2001, 'bla bla bla', 'isbn 5'],
+                [5, 'book 5', 2004, 'bla bla bla', 'isbn 5'],
             ]
         );
 

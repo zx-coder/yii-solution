@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Book;
 use Yii;
 use app\models\Author;
 use yii\data\ActiveDataProvider;
@@ -34,19 +35,19 @@ class AuthorController extends Controller
         );
     }
 
-    public function actionTop10()
+    public function actionTop10($year = 0): string
     {
         $dataProvider = new ActiveDataProvider([
-            'query' => Author::getTopActiveQuery(),
+            'query' => Author::getTopActiveQuery($year),
 
             'pagination' => [
                 'pageSize' => self::LIMIT10,
             ],
         ]);
 
-
-        return $this->render('index', [
+        return $this->render('top_index', [
             'dataProvider' => $dataProvider,
+            'years' => Book::getYears(),
         ]);
     }
 
